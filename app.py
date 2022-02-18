@@ -12,7 +12,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def func():
-    html = "<h3>Hello {name}!</h3> <b>Hostname:</b> {hostname}<br/>"                                                                                                        return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname())   
+    html = "<h3>Hello {name}!</h3> <b>Hostname:</b> {hostname}<br/>"    
+    return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname())   
  
 
 @app.route("/load")
@@ -21,4 +22,4 @@ def load():
     return str(load)
 
 if __name__ == '__main__':
-   app1.run(debug=True, host='0.0.0.0',port="8080")
+    app1.run(debug=True, host='0.0.0.0',port="8080")
